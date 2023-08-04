@@ -1,0 +1,12 @@
+{
+	"name": "linkedServicesqlserver2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=arvsqlserver2.database.windows.net;initial catalog=arvsqldatabase2;user id=arv",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQERFQTAwNUQ2LTg2RUUtNEMyNS04Q0IzLUFFRUJFOUEzN0EzQ184MDc4MTMxNi1iNGNkLTQ5NzgtOWNlMC0yMjY0OTFmN2NjNTgiDQp9"
+		}
+	}
+}
