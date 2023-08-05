@@ -65,7 +65,7 @@
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source2",
-				"source1 filter(toInteger(Year) >= 1910 && toInteger(Year) <= 2000",
+				"source1 filter(toInteger(Year) >= 1910 && toInteger(Year) <= 2030",
 				"",
 				") ~> filterYear",
 				"filterYear aggregate(groupBy(Year),",
