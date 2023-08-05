@@ -69,7 +69,7 @@
 				"",
 				") ~> filterYear",
 				"filterYear aggregate(groupBy(Year),",
-				"     Worldwide_Gross = avg(toInteger(Rating))) ~> AggregateComedyRatings"
+				"     Rotten_Tomatoes = avg(toInteger(Rotten_Tomatoes))) ~> AggregateComedyRatings"
 			]
 		}
 	}
