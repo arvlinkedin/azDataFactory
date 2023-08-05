@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "SourceContainer",
+						"value": "adftest1"
+					},
+					{
+						"name": "SourceDirectory",
+						"value": "movies"
+					}
+				],
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "GetMetadataDataset",
@@ -30,7 +39,14 @@
 						}
 					},
 					"fieldList": [
-						"columnCount"
+						{
+							"value": "@pipeline().parameters.SourceContainer",
+							"type": "Expression"
+						},
+						{
+							"value": "@pipeline().parameters.SourceDirectory",
+							"type": "Expression"
+						}
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
