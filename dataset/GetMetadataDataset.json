@@ -7,11 +7,13 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"SourceContainer": {
-				"type": "string"
-			},
 			"SourceDirectory": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "movies"
+			},
+			"SourceContainer": {
+				"type": "string",
+				"defaultValue": "adftest1"
 			}
 		},
 		"annotations": [],
@@ -20,8 +22,14 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "moviesDB2.csv",
-				"folderPath": "movies",
-				"fileSystem": "adftest1"
+				"folderPath": {
+					"value": "@dataset().SourceDirectory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().SourceContainer",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
