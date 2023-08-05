@@ -19,7 +19,15 @@
 					"name": "source2"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlDatabaseSinkDataset",
+						"type": "DatasetReference"
+					},
+					"name": "sinkaggregate1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "filterYear"
@@ -69,7 +77,17 @@
 				"",
 				") ~> filterYear",
 				"filterYear aggregate(groupBy(Year),",
-				"     Rotten_Tomatoes = avg(toInteger(Rotten_Tomatoes))) ~> AggregateComedyRatings"
+				"     Rotten_Tomatoes = avg(toInteger(Rotten_Tomatoes))) ~> AggregateComedyRatings",
+				"AggregateComedyRatings sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sinkaggregate1"
 			]
 		}
 	}
