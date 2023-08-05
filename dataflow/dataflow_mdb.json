@@ -20,7 +20,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "filterYear"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -28,7 +32,10 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> source2"
+				"     format: 'table') ~> source2",
+				"source1 filter(toInteger(year) >= 1910 && toInteger(year) <= 2000",
+				"",
+				") ~> filterYear"
 			]
 		}
 	}
