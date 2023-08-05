@@ -3,7 +3,7 @@
 	"properties": {
 		"description": "Connection to your source data store.",
 		"linkedServiceName": {
-			"referenceName": "adflinksreviceSQL2",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -19,6 +19,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "moviesDB2.csv",
 				"folderPath": {
 					"value": "@dataset().SourceDirectory",
 					"type": "Expression"
