@@ -7,17 +7,18 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"sinkTableName": {
-				"type": "string"
+			"sourceTableName": {
+				"type": "string",
+				"defaultValue": "Product"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
+			"schema": "SalesLT",
 			"table": {
-				"value": "@dataset().sinkTableName",
+				"value": "@dataset().sourceTableName",
 				"type": "Expression"
 			}
 		}
