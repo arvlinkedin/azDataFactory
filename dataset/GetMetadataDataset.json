@@ -20,14 +20,8 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "moviesDB2.csv",
-				"folderPath": {
-					"value": "@dataset().SourceDirectory",
-					"type": "Expression"
-				},
-				"fileSystem": {
-					"value": "@dataset().SourceContainer",
-					"type": "Expression"
-				}
+				"folderPath": "movies",
+				"fileSystem": "adftest1"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
